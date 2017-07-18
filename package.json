@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/EveryMundo/message-to-slack#readme",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^3.1.2"
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2"
   }
 }
