@@ -4,7 +4,16 @@
   "description": "Easily send message to slack channels",
   "main": "lib/slack.js",
   "scripts": {
+    "cover": "NODE_ENV=test istanbul cover -x '*test.js' _mocha -- -R spec",
+    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "check-lint": "eslint *.js lib/*.js test/*.js routes/*.js",
+    "fix-lint": "eslint --fix *.js lib/*.js test/*.js routes/*.js",
     "test": "mocha"
+  },
+  "config": {
+    "ghooks": {
+      "pre-push": "npm run check-lint && npm run cover && npm run check-coverage"
+    }
   },
   "repository": {
     "type": "git",
@@ -27,7 +36,12 @@
   },
   "homepage": "https://github.com/EveryMundo/message-to-slack#readme",
   "devDependencies": {
-    "chai": "^4.1.0",
-    "mocha": "^3.4.2"
+    "@everymundo/cleanrequire": "^1.0.0",
+    "chai": "^4.1.2",
+    "ghooks": "^2.0.2",
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^5.0.0",
+    "nock": "^9.1.6",
+    "sinon": "^4.2.2"
   }
 }
