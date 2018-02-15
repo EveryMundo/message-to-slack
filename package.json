@@ -1,6 +1,6 @@
 {
   "name": "@everymundo/message-to-slack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Easily send message to slack channels",
   "main": "lib/slack.js",
   "scripts": {
